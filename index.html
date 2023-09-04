@@ -2,7 +2,7 @@
 <html>
 <head>
  
-  <base href="/oghenekaro.github.io/">
+  <base href="/karo/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -154,13 +154,14 @@
   </style>
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "1774318367";
+    var isLoading = true;
+    var serviceWorkerVersion = "2447224605";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body style="background-color: #071d34">
-  <div class="loading"></div>
+  <div id="loading_id" class="loading"></div>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -171,6 +172,8 @@
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
+            var element = document.getElementById("loading_id");
+            element.hidden = true;
           });
         }
       });
